@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
+        <title>Frontend Mentor | Interactive card details form</title>
+        <link rel="stylesheet" href="styles.css" />
+        <script src="script.js" defer></script>
+        <!-- Fuente -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Space+Grotesk:wght@500&display=swap"
+            rel="stylesheet"
+        />
+        <!-- SweetAlert -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head>
+    <body>
+        <header>
+            <div class="tarjetas">
+                <div class="tarjeta-frontal">
+                    <div class="circles">
+                        <div class="full-circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="numero-tarjeta" id="numeroTarjeta"></div>
+                    <div class="titular-tarjeta" id="titularTarjeta"></div>
+                    <div class="fecha-exp-tarjeta">
+                        <div class="mes-tarjeta" id="mesTarjeta"></div>
+                        <span>/</span>
+                        <div class="mes-tarjeta" id="anoTarjeta"></div>
+                    </div>
+                </div>
+                <div class="tarjeta-trasera">
+                    <div class="cvc" id="cvc"></div>
+                </div>
+            </div>
+        </header>
+        <form>
+            <label for="">CARDHOLDER NAME</label>
+            <input
+                id="titularInput"
+                autocomplete="off"
+                type="text"
+                placeholder="e.g. Jane Appleseed"
+                maxlength="22"
+            />
+            <label id="numeroTarjetaLabel"
+                >CARD NUMBER
+                <div id="borrarNumeroTarjeta">✖</div></label
+            >
+            <input
+                id="numeroTarjetaInput"
+                autocomplete="off"
+                type="text"
+                placeholder="e.g. 1234 5678 9123 0000"
+                maxlength="16"
+            />
+            <div class="flex">
+                <div class="flex-left">
+                    <label for="">EXP. DATE</label>
+                    <div class="flex-left-inputs">
+                        <input
+                            id="mesInput"
+                            autocomplete="off"
+                            type="text"
+                            placeholder="MM"
+                            maxlength="2"
+                        />
+                        <span>/</span>
+                        <input
+                            id="anoInput"
+                            autocomplete="off"
+                            type="text"
+                            placeholder="YY"
+                            maxlength="2"
+                        />
+                    </div>
+                </div>
+                <div class="flex-right">
+                    <label for="">CVC</label>
+                    <input
+                        id="cvcInput"
+                        autocomplete="off"
+                        type="password"
+                        placeholder="e.g. 123"
+                        maxlength="3"
+                        minlength="3"
+                    />
+                </div>
+            </div>
+            <button id="confirmBtn">Confirm</button>
+        </form>
+        <!-- Completed state start -->
+        <div class="container hidden">
+            <div class="complete-state">
+                <div class="circle-check">✔</div>
+                <div class="text">
+                    <h2>THANK YOU!</h2>
+                    <p>We've added your card details</p>
+                </div>
+                <button id="continueBtn">Continue</button>
+            </div>
+        </div>
+        <footer>
+            Challenge by
+            <a
+                href="https://www.frontendmentor.io?ref=challenge"
+                target="_blank"
+                >Frontend Mentor</a
+            >. Coded With 💖 by 👉🏻
+            <a
+                href="https://www.linkedin.com/in/carlos-morales-2720b61ba/"
+                target="_blank"
+                >Krlos Morales</a
+            >.
+        </footer>
+    </body>
+</html>

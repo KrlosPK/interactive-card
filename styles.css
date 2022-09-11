@@ -1,0 +1,328 @@
+/* Colors */
+:root {
+    --blanco: hsl(0, 0%, 100%);
+    --light-grayish-violet: hsl(270, 3%, 87%);
+    --dark-grayish-violet: hsl(279, 6%, 55%);
+    --very-dark-violet: hsl(278, 68%, 11%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Space Grotesk", sans-serif;
+}
+body {
+    height: 100vh;
+}
+.hidden {
+    display: none;
+}
+
+/* Previsualización de las tarjetas */
+header {
+    background: url(./images/bg-main-mobile.png) no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 280px;
+    margin-bottom: 1em;
+    position: relative;
+    top: 0;
+}
+.tarjetas {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    width: 280px;
+}
+.tarjeta-frontal {
+    background: url(./images/bg-card-front.png);
+    background-size: 100%;
+    width: 230px;
+    aspect-ratio: 16/8.7;
+    position: relative;
+    top: 106px;
+    left: 10px;
+    overflow: hidden;
+}
+.circles {
+    position: relative;
+    top: 5%;
+    left: 5%;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    width: fit-content;
+}
+.full-circle {
+    width: 33px;
+    height: 33px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+.circle {
+    width: 14px;
+    height: 14px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+.numero-tarjeta {
+    position: absolute;
+    color: #fff;
+    text-transform: uppercase;
+    bottom: 40%;
+    left: 60%;
+    transform: translate(-50%);
+    width: fit-content;
+    letter-spacing: 2px;
+    width: 100%;
+}
+.titular-tarjeta {
+    position: absolute;
+    color: #fff;
+    text-transform: uppercase;
+    bottom: 12%;
+    left: 10%;
+    font-size: 11px;
+}
+.fecha-exp-tarjeta {
+    position: absolute;
+    color: #fff;
+    text-transform: uppercase;
+    bottom: 12%;
+    right: 10%;
+    display: flex;
+    font-size: 11px;
+}
+.tarjeta-trasera {
+    background: url(./images/bg-card-back.png);
+    background-size: 100%;
+    width: 230px;
+    aspect-ratio: 16/8.7;
+    position: absolute;
+    top: 32px;
+    right: 10px;
+    z-index: -1;
+}
+.cvc {
+    position: absolute;
+    right: 13%;
+    letter-spacing: 1px;
+    bottom: 45%;
+    color: #fff;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+/* Fin Previsualización de las tarjetas */
+
+/* Formulario Para Datos de la Tarjeta */
+form {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    gap: 1em;
+    width: fit-content;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 2.5em 1.5em;
+    box-shadow: 2px 6px 20px 1px rgba(0, 0, 0, 0.4);
+}
+form label {
+    color: var(--very-dark-violet);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+#numeroTarjetaLabel {
+    position: relative;
+}
+#borrarNumeroTarjeta {
+    position: absolute;
+    right: 5%;
+    top: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #fff;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    letter-spacing: 0;
+    justify-content: center;
+    align-items: center;
+    transition: 200ms linear;
+}
+#borrarNumeroTarjeta:hover {
+    color: #fff;
+    background-color: #000;
+}
+form input {
+    border: none;
+    padding: 0.3em 0.8em;
+    color: var(--very-dark-violet);
+    border-radius: 4px;
+    text-transform: uppercase;
+    background-color: transparent;
+}
+form input::placeholder {
+    color: var(--dark-grayish-violet);
+}
+form input:focus {
+    outline: 2.5px solid var(--dark-grayish-violet);
+}
+.flex {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+.flex-left {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.flex-left-inputs {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+}
+.flex-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.flex input {
+    margin-top: 1em;
+    width: 5.5em;
+}
+form button {
+    padding: 8px 20px;
+    color: var(--light-grayish-violet);
+    background-color: var(--very-dark-violet);
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    max-width: 320px;
+    transition: background 300ms ease;
+}
+form button:hover {
+    background-color: hsl(278, 68%, 14%);
+}
+form button:focus {
+    outline: none;
+}
+/* Fin Formulario Para Datos de la Tarjeta */
+
+/* Complete State */
+.container {
+    width: 100%;
+    height: 1px;
+    position: relative;
+}
+.complete-state {
+    width: 305px;
+    height: 360px;
+    border-radius: 10px;
+    padding: 0 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    position: absolute;
+    top: -355px;
+    background-color: #fff;
+    left: 50%;
+    transform: translate(-50%);
+}
+.circle-check {
+    background: url("images/bg-card-front.png") no-repeat;
+    background-size: 200%;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 28px;
+    user-select: none;
+}
+.complete-state h2 {
+    font-size: 28px;
+    text-align: center;
+}
+.complete-state p {
+    font-size: 20px;
+    text-align: center;
+}
+.complete-state button {
+    color: #fff;
+    background-color: var(--very-dark-violet);
+    padding: 0.8rem 1rem;
+    width: 85%;
+    border-radius: 10px;
+    font-size: 19px;
+    border: none;
+    transition: background-color 300ms ease;
+    cursor: pointer;
+}
+.complete-state button:hover {
+    background-color: hsl(278, 68%, 14%);
+}
+/* Fin Complete State */
+
+/* Pie de Página */
+footer {
+    position: fixed;
+    bottom: 0;
+    color: #fff;
+    font-size: 11px;
+    padding: 1em;
+    text-align: center;
+    background: url(./images/bg-main-mobile.png) no-repeat;
+    background-size: 100%;
+    width: 100%;
+}
+footer a {
+    color: hsl(59, 45%, 50%);
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+/* Fin Pie de Página */
+
+/* Media Queries */
+@media only screen and (min-width: 768px) {
+    .tarjetas {
+        width: 375px;
+    }
+    .tarjeta-frontal,
+    .tarjeta-trasera {
+        width: 300px;
+    }
+    .tarjeta-frontal {
+        top: 126px;
+    }
+    form {
+        margin-top: 4rem;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .tarjetas {
+        width: 425px;
+    }
+    .tarjeta-frontal,
+    .tarjeta-trasera {
+        width: 350px;
+    }
+    .tarjeta-frontal {
+        top: 142px;
+    }
+    form {
+        margin-top: 10rem;
+    }
+}
