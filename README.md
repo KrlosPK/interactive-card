@@ -2,7 +2,7 @@
 
 ![Design preview for the Interactive card details form coding challenge](./design/desktop-preview.png)
 ![Design preview for the Interactive card details form coding challenge](./design/mobile-preview.png)
-![Design preview for the Interactive card details form coding challenge](./design/desktop-succesful.png.png)
+![Design preview for the Interactive card details form coding challenge](./design/desktop-succesful.png)
 ![Design preview for the Interactive card details form coding challenge](./design/mobile-error.png)
 
 ## Welcome! 👋
