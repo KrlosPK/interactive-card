@@ -15,9 +15,6 @@
 body {
     height: 100vh;
 }
-.hidden {
-    display: none;
-}
 
 /* Previsualización de las tarjetas */
 header {
@@ -216,11 +213,6 @@ form button:focus {
 /* Fin Formulario Para Datos de la Tarjeta */
 
 /* Complete State */
-.container {
-    width: 100%;
-    height: 1px;
-    position: relative;
-}
 .complete-state {
     width: 305px;
     height: 360px;
@@ -232,7 +224,7 @@ form button:focus {
     align-items: center;
     gap: 2.5rem;
     position: absolute;
-    top: -355px;
+    top: 0;
     background-color: #fff;
     left: 50%;
     transform: translate(-50%);
@@ -272,6 +264,9 @@ form button:focus {
 .complete-state button:hover {
     background-color: hsl(278, 68%, 14%);
 }
+.hidden {
+    display: none;
+}
 /* Fin Complete State */
 
 /* Pie de Página */
@@ -308,7 +303,25 @@ footer a:hover {
         top: 126px;
     }
     form {
-        margin-top: 4rem;
+        margin-top: 10%;
+    }
+    header {
+        width: 50%;
+        background: url(./images/bg-main-desktop.png);
+        background-size: 100%;
+        height: 100vh;
+    }
+    .tarjetas {
+        margin-top: 45%;
+    }
+    body {
+        display: flex;
+    }
+    form {
+        height: fit-content;
+        left: 5%;
+        top: 90px;
+        transform: scale(1.2);
     }
 }
 @media only screen and (min-width: 1200px) {
@@ -323,6 +336,6 @@ footer a:hover {
         top: 142px;
     }
     form {
-        margin-top: 10rem;
+        margin-top: 16%;
     }
 }

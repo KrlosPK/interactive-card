@@ -18,7 +18,7 @@ const confirmBtn = document.querySelector("#confirmBtn");
 const continueBtn = document.querySelector("#continueBtn");
 
 // Complete State
-const containerCS = document.querySelector(".container");
+const containerCS = document.querySelector(".complete-state");
 
 // Funciones
 const cambiarTextoTitular = () => {
@@ -195,10 +195,26 @@ const enviarFormulario = (e) => {
     // Fin Validaciones para el CVC
 
     containerCS.classList.remove("hidden");
+    titularInput.disabled = true;
+    numeroTarjetaInput.disabled = true;
+    mesInput.disabled = true;
+    anoInput.disabled = true;
+    cvcInput.disabled = true;
+    containerCS.disabled = true;
 };
 
 const reiniciarFormulario = () => {
-    location.reload();
+    titularInput.value = "";
+    numeroTarjetaInput.value = "";
+    mesInput.value = "";
+    anoInput.value = "";
+    cvcInput.value = "";
+    containerCS.classList.add("hidden");
+    cambiarTextoTitular();
+    cambiarTextoNumero();
+    cambiarTextoMes();
+    cambiarTextoAno();
+    cambiarTextoCvc();
 };
 
 // Eventos
